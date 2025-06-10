@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des articles{% endblock %}
+
+{% block body %}
+    <h1>Liste des articles</h1>
+
+    <ul>
+        {% for post in posts %}
+            <li>
+                <a href="{{ path('blog_show', {'id': post.id}) }}">{{ post.title }}</a>
+            </li>
+        {% else %}
+            <li>Aucun article trouvé.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
